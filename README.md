@@ -96,13 +96,36 @@ Platforms: macOS (Apple Silicon, Intel) and Linux (x86_64, arm64, including WSL 
 
 ## Usage
 
-Load the plugin for a session:
+### Install from GitHub
+
+The repository is also a plugin marketplace (`.claude-plugin/marketplace.json`). Add it and install the plugin from your shell:
 
 ```bash
-claude --plugin-dir /path/to/paper-forge
+claude plugin marketplace add rysavy-ondrej/paper-forge
+claude plugin install paper-forge@paper-forge
 ```
 
-Then, for example: "Create an IEEE conference paper project in `~/papers/triage`", "Set up a paper for the Springer journal Cybersecurity using their template", "Outline the paper from my notes", "Write the related work section", "Build the paper and fix the errors", "Validate the paper for a 6-page double-blind submission".
+or inside a Claude Code session:
+
+```text
+/plugin marketplace add rysavy-ondrej/paper-forge
+/plugin install paper-forge@paper-forge
+```
+
+Check it with `claude plugin list`. To get new versions later, run `claude plugin marketplace update paper-forge`, or `/plugin` in a session and update from the marketplace's page. To remove it: `claude plugin uninstall paper-forge@paper-forge`.
+
+### Use a local checkout
+
+For development, load the plugin from a clone for one session:
+
+```bash
+git clone https://github.com/rysavy-ondrej/paper-forge.git
+claude --plugin-dir ./paper-forge
+```
+
+### Working with the skills
+
+Ask in plain language, for example: "Create an IEEE conference paper project in `~/papers/triage`", "Set up a paper for the Springer journal Cybersecurity using their template", "Outline the paper from my notes", "Write the related work section", "Build the paper and fix the errors", "Validate the paper for a 6-page double-blind submission".
 
 ## Tests
 
@@ -112,6 +135,7 @@ Then, for example: "Create an IEEE conference paper project in `~/papers/triage`
 
 ```text
 .claude-plugin/plugin.json   # plugin manifest
+.claude-plugin/marketplace.json  # marketplace listing for GitHub installs
 skills/<name>/SKILL.md       # one directory per skill
 templates/{common,ieee-conference,ieee-journal,acm,springer-lncs,elsevier,generic-article}/
 tests/                       # run-tests.sh, demo-paper/

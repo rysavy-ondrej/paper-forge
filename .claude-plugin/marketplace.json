@@ -1,0 +1,14 @@
+{
+  "name": "paper-forge",
+  "description": "Write research papers in Markdown and publish them with LaTeX templates.",
+  "owner": {
+    "name": "Ondrej Rysavy"
+  },
+  "plugins": [
+    {
+      "name": "paper-forge",
+      "source": "./",
+      "description": "Write research papers in Markdown and publish them with IEEE, ACM, Springer, Elsevier, or venue-specific LaTeX templates."
+    }
+  ]
+}
