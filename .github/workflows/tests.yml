@@ -12,8 +12,6 @@ jobs:
       matrix:
         os: [ubuntu-latest, ubuntu-24.04-arm, macos-latest, macos-13]
     runs-on: ${{ matrix.os }}
-    env:
-      TMPDIR: ${{ runner.temp }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v4
@@ -22,6 +20,8 @@ jobs:
           key: toolchain-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('templates/common/build.sh', 'templates/common/requirements.txt', 'templates/*/latex/tex-packages.txt') }}
       - name: Build templates and demo paper
         run: tests/run-tests.sh --setup
+        env:
+          TMPDIR: ${{ runner.temp }}
       - name: Upload logs
         if: failure()
         uses: actions/upload-artifact@v4
