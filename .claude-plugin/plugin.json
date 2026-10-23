@@ -1,0 +1,11 @@
+{
+  "name": "paper-forge",
+  "version": "0.1.0",
+  "description": "Write research papers in Markdown and publish them with IEEE, ACM, Springer, Elsevier, or venue-specific LaTeX templates.",
+  "author": {
+    "name": "Ondrej Rysavy",
+    "email": "rysavy.ondrej@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["latex", "pandoc", "academic", "paper", "ieee", "acm", "springer", "elsevier", "writing"]
+}

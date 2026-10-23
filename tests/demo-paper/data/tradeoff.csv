@@ -1,0 +1,9 @@
+# SYNTHETIC demonstration data generated for the paper-forge test paper; not experimental results.
+tau_c,f1,escalated
+0.00,0.781,0.000
+0.05,0.799,0.019
+0.10,0.818,0.041
+0.15,0.837,0.068
+0.20,0.852,0.103
+0.25,0.864,0.147
+0.30,0.873,0.201

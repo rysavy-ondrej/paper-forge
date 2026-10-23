@@ -1,0 +1,42 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
+
+\input{pandoc-compat}
+
+\begin{document}
+
+\title{Multi-Agent Language-Model Triage of Network Intrusion Alerts: A Toolchain Demonstration}
+
+\author{
+\IEEEauthorblockN{Demo Author}
+\IEEEauthorblockA{
+Example Institution\\
+Example City, Country\\
+demo@example.org}
+}
+
+\maketitle
+
+\begin{abstract}
+\input{generated/abstract.tex}
+\end{abstract}
+
+\begin{IEEEkeywords}
+Intrusion detection, alert triage, language models, multi-agent systems
+\end{IEEEkeywords}
+
+\input{generated/body.tex}
+
+% Allow building before the first citation exists (empty bibliography).
+\makeatletter\let\@noitemerr\relax\makeatother
+\bibliographystyle{IEEEtran}
+\bibliography{../references/references}
+
+\end{document}
